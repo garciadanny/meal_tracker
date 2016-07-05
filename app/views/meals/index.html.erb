@@ -1,3 +1,14 @@
-<% @meals.each do |meal| %>
-  <h4><%= meal.name %></h4>
-<% end %>
+  <table class="table-minimal">
+    <thead>
+      <tr>
+        <th>Meal Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @meals.each do |meal| %>
+        <tr>
+          <td><h4><%= meal.name %></h4></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
