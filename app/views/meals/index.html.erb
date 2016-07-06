@@ -1,4 +1,10 @@
 <div class="container">
+  <section class="actions">
+    <p>
+      <%= link_to "Add meal", new_meal_path %>
+    </p>
+  </section>
+
   <section>
     <table class="table-minimal">
       <thead>
@@ -9,7 +15,7 @@
       <tbody>
         <% @meals.each do |meal| %>
           <tr>
-            <td><h4><%= meal.name %></h4></td>
+            <td><h4><%= link_to meal.name, meal %></h4></td>
           </tr>
         <% end %>
       </tbody>

@@ -36,30 +36,33 @@
         </p>
 
         <p>
-          <%= meal_item_form.label :protein %><br>
+          <%= meal_item_form.label 'Protein (g)' %><br>
           <%= meal_item_form.text_field :protein %>
         </p>
 
         <p>
-          <%= meal_item_form.label :fat %><br>
+          <%= meal_item_form.label 'Fat (g)' %><br>
           <%= meal_item_form.text_field :fat %>
         </p>
 
         <p>
-          <%= meal_item_form.label :carbs %><br>
+          <%= meal_item_form.label 'Carbs (g)' %><br>
           <%= meal_item_form.text_field :carbs %>
         </p>
 
         <p>
-          <%= meal_item_form.label :fiber %><br>
+          <%= meal_item_form.label 'Fiber (g)' %><br>
           <%= meal_item_form.text_field :fiber %>
         </p>
       </li>
     <% end %>
   </ul>
 
-
   <p>
     <%= f.submit %>
+  </p>
+
+  <p>
+    <%= link_to "Cancel", meals_path %>
   </p>
 <% end %>
