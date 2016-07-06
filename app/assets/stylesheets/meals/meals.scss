@@ -1,3 +1,12 @@
+.container {
+  @include span-columns(12);
+
+  section {
+    @include span-columns(6);
+    float: none; // Neat or Bourbon is setting this to float: right
+    margin: 20em auto !important; // Neat or Bouron is setting this to margin-right: 0
+  }
+}
 .table-minimal {
   $base-border-color: gainsboro !default;
   $base-border-radius: 3px !default;

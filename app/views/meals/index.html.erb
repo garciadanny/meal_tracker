@@ -1,14 +1,18 @@
-  <table class="table-minimal">
-    <thead>
-      <tr>
-        <th>Meal Name</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @meals.each do |meal| %>
+<div class="container">
+  <section>
+    <table class="table-minimal">
+      <thead>
         <tr>
-          <td><h4><%= meal.name %></h4></td>
+          <th>Meal Name</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        <% @meals.each do |meal| %>
+          <tr>
+            <td><h4><%= meal.name %></h4></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </section>
+</div>
