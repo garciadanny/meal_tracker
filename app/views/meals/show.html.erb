@@ -1,0 +1,32 @@
+<h1><%= @meal.name %></h1>
+
+<div class="container">
+  <section>
+    <table class="table-minimal">
+      <thead>
+        <tr>
+          <th>Meal Item Name</th>
+          <th>Quantity</th>
+          <th>Calories</th>
+          <th>Protein</th>
+          <th>Carbs</th>
+          <th>Fat</th>
+          <th>Fiber</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @meal.items.each do |meal_item| %>
+          <tr>
+            <td><h4><%= meal_item.name %></h4></td>
+            <td><%= "#{meal_item.quantity} #{meal_item.quantity_type}" %></td>
+            <td><%= meal_item.calories %></td>
+            <td><%= "#{meal_item.protein} g" %></td>
+            <td><%= "#{meal_item.carbs} g" %></td>
+            <td><%= "#{meal_item.fat} g" %></td>
+            <td><%= "#{meal_item.fiber} g" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </section>
+</div>
