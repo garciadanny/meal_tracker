@@ -13,6 +13,8 @@ gem 'refills', '~> 0.1.0'
 gem 'bourbon', '~> 4.2.7'
 gem 'neat', '~> 1.8.0'
 
+gem 'font-awesome-sass'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views

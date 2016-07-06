@@ -1,0 +1,16 @@
+<header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <%= link_to(meals_path, class: "logo") do %>
+      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_square.png" alt="Logo Image">
+    <% end %>
+
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+        <li class="nav-link" id="add-meal-nav-button">
+          <%= link_to(new_meal_path) do %>
+            <i class="fa fa-plus" aria-hidden="true"></i>
+          <% end %>
+        </li>
+      </ul>
+    </nav>
+</header>
