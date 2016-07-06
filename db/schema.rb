@@ -10,9 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160705023802) do
+ActiveRecord::Schema.define(version: 20160705223357) do
 
-  create_table "meals", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "meal_items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "meal_id"
     t.string   "name"
     t.float    "quantity",      limit: 24
     t.string   "quantity_type"
@@ -23,6 +24,13 @@ ActiveRecord::Schema.define(version: 20160705023802) do
     t.float    "fiber",         limit: 24
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.index ["meal_id"], name: "index_meal_items_on_meal_id", using: :btree
+  end
+
+  create_table "meals", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

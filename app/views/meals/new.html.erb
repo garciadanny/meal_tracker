@@ -1,10 +1,63 @@
 <h2>Add a meal<h2>
 
 <%= form_for @meal do |f| %>
+
   <p>
     <%= f.label :meal_name %><br>
     <%= f.text_field :name %>
   </p>
+
+  <ul>
+    <%= f.fields_for :items do |meal_item_form| %>
+      <li>
+        <p>
+          <%= meal_item_form.label :food_item_name %><br>
+          <%= meal_item_form.text_field :name %>
+        </p>
+
+        <p>
+          <%= meal_item_form.label :quantity %><br>
+          <%= meal_item_form.text_field :quantity %>
+        </p>
+
+
+        <p>
+          <%= meal_item_form.label :quantity_type %><br>
+          <%= meal_item_form.select(
+              :quantity_type,
+              options_for_select([['oz', :oz], ['g', :g]])
+            )
+          %>
+        </p>
+
+        <p>
+          <%= meal_item_form.label :calories %><br>
+          <%= meal_item_form.text_field :calories %>
+        </p>
+
+        <p>
+          <%= meal_item_form.label :protein %><br>
+          <%= meal_item_form.text_field :protein %>
+        </p>
+
+        <p>
+          <%= meal_item_form.label :fat %><br>
+          <%= meal_item_form.text_field :fat %>
+        </p>
+
+        <p>
+          <%= meal_item_form.label :carbs %><br>
+          <%= meal_item_form.text_field :carbs %>
+        </p>
+
+        <p>
+          <%= meal_item_form.label :fiber %><br>
+          <%= meal_item_form.text_field :fiber %>
+        </p>
+      </li>
+    <% end %>
+  </ul>
+
 
   <p>
     <%= f.submit %>

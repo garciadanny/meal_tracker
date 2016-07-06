@@ -5,6 +5,7 @@ class MealsController < ApplicationController
 
   def new
     @meal = Meal.new
+    2.times { @meal.items.build  }
   end
 
   def create
@@ -20,13 +21,18 @@ class MealsController < ApplicationController
   private def meal_params
   params.require(:meal).permit(
     :name,
-    :quantity,
-    :quantity_type,
-    :calories,
-    :protein,
-    :fat,
-    :carbs,
-    :fiber
+    items_attributes: [
+      :id,
+      :name,
+      :quantity,
+      :quantity_type,
+      :calories,
+      :protein,
+      :fat,
+      :carbs,
+      :fiber,
+      :_destroy
+    ]
   )
   end
 end

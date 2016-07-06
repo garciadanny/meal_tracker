@@ -1,6 +1,7 @@
-class CreateMeals < ActiveRecord::Migration[5.0]
+class CreateMealItems < ActiveRecord::Migration[5.0]
   def change
-    create_table :meals do |t|
+    create_table :meal_items do |t|
+      t.belongs_to :meal, index: true
       t.string :name
       t.float :quantity
       t.string :quantity_type
